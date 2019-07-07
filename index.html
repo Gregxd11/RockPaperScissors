@@ -4,7 +4,25 @@
     <title>RPS test</title>
 <body>
     <script>
-        
+       function computerPlay() {
+            let computerChoice = Math.random();
+                if (computerChoice < 0.34) {
+                    computerChoice = "Paper";   
+                }
+                else if (computerChoice <=0.67) {
+                    computerChoice = "Rock";
+                }
+                else {
+                    computerChoice = "Scissors";
+                } 
+        }
+        let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
+
+        function playRound(playerSelection, computerSelection) {
+            
+
+        } 
+
     </script>
 </body>
 </head>   
