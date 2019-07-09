@@ -4,24 +4,48 @@
     <title>RPS test</title>
 <body>
     <script>
-       function computerPlay() {
-            let computerChoice = Math.random();
-                if (computerChoice < 0.34) {
-                    computerChoice = "Paper";   
-                }
-                else if (computerChoice <=0.67) {
-                    computerChoice = "Rock";
-                }
-                else {
-                    computerChoice = "Scissors";
-                } 
+        function computerPlay(){
+            switch(Math.floor(Math.random() * 3)) {
+                case 0:
+                    return 'rock';
+                    break;
+                case 1:
+                    return 'paper';
+                    break;
+                case 2: 
+                    return 'scissors';
+                    break;
+            };
         }
-        let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
+        function playRound(playerSelection, computerSelection){
+            if (playerSelection === computerSelection){
+                return 'Draw!';
+            } else if (playerSelection === 'rock'){
+                if (computerSelection === 'paper'){
+                    return 'Computer wins!';
+                } else {
+                    return 'You win!';
+                }
 
-        function playRound(playerSelection, computerSelection) {
-            
+            } else if (playerSelection === 'paper'){
+                if (computerSelection === 'scissors'){
+                    return 'Computer wins!';
+                } else {
+                    return 'You win!';
+                }
+            } else if (playerSelection === 'scissors'){
+                if (computerSelection === 'rock'){
+                    return 'Computer wins!';
+                } else {
+                    return 'You win!';
+                }
+            }
+            }
+        const playerSelection = prompt('Rock, paper, or scissors?').toLowerCase();
+        const computerSelection = computerPlay()
+        console.log(playRound(playerSelection, computerSelection))
+       
 
-        } 
 
     </script>
 </body>
